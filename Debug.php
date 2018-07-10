@@ -96,4 +96,99 @@ class Debug
         echo "<pre>dump \n---------------------- \n\n" . print_r($data, true) . "\n----------------------</pre>";
         if ($exit) exit;
     }
+
+    /**
+     * Prints a list of all currently declared classes.
+     *
+     * Debug::classes();
+     *
+     * @access public
+     * @return string
+     */
+    public static function classes()
+    {
+        return Debug::dump(get_declared_classes());
+    }
+
+    /**
+     * Prints a list of all currently declared interfaces.
+     *
+     * Debug::interfaces();
+     *
+     * @access public
+     * @return string
+     */
+    public static function interfaces()
+    {
+        return Debug::dump(get_declared_interfaces());
+    }
+
+    /**
+     * Prints a list of all currently included (or required) files.
+     *
+     * Debug::includes();
+     *
+     * @access public
+     * @return string
+     */
+    public static function includes()
+    {
+        return Debug::dump(get_included_files());
+    }
+
+    /**
+     * Prints a list of all currently declared functions.
+     *
+     * Debug::functions();
+     *
+     * @access public
+     * @return string
+     */
+    public static function functions()
+    {
+        return Debug::dump(get_defined_functions());
+    }
+
+    /**
+     * Prints a list of all currently declared constants.
+     *
+     * Debug::constants();
+     *
+     * @access public
+     * @return string
+     */
+    public static function constants()
+    {
+        return Debug::dump(get_defined_constants());
+    }
+
+    /**
+     * Prints a list of all currently loaded PHP extensions.
+     *
+     * Debug::extensions();
+     *
+     * @access public
+     * @return string
+     */
+    public static function extensions()
+    {
+        return Debug::dump(get_loaded_extensions());
+    }
+
+    /**
+     * Prints a list of the configuration settings read from php.ini
+     *
+     * Debug::phpini();
+     *
+     * @access public
+     * @return string
+     */
+    public static function phpini()
+    {
+        if (!is_readable(get_cfg_var('cfg_file_path'))) {
+            return false;
+        }
+
+        return Debug::dump(parse_ini_file(get_cfg_var('cfg_file_path'), true));
+    }
 }

@@ -1,14 +1,11 @@
-# v1.0.4, 2018-04-29
-* infrastructure changes
+# v1.1.0, 2018-07-10
+* New method phpini()
+* New method functions()
+* New method includes()
+* New method interfaces()
+* New method constants()
+* New method extensions()
+* New method classes()
 
-# v1.0.3, 2018-03-10
-* bug fixes
-
-# v1.0.2, 2018-03-10
-* bug fixes
-
-# v1.0.1, 2018-03-10
-* bug fixes
-
-# v1.0.0, 2018-03-10
+# v1.0.0, 2018-04-12
 * Initial release
